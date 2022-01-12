@@ -3,8 +3,6 @@ from flask import Flask, render_template, request, jsonify
 from chat import get_response
 
 from flask import Flask, render_template, request, redirect, url_for, session
-from flask_socketio import SocketIO, join_room, leave_room, emit
-from flask_session import Session
 
 app = Flask(__name__)
 
