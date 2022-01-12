@@ -1,0 +1,242 @@
+{
+    "intents": [
+        {
+            "tag": "late days",
+            "patterns": [
+                "I've been really struggling with this pset and was planning to take a late day to hopefully work it out, but I just checked on the grading server and that would take me a couple of hours over the allotted number of late hours. I want to request another extension to just try and grind it out over tomorrow if possible.",
+                "I need an extra late day.",
+                "I would like to request more late hours",
+                "Can I have an extenion? I am feeling sick and cannot finish the pset on time",
+                "I would like to request an extention. One or two late days would do it.",
+                "I'd like to ask for extra time to work on the pset",
+                "I need more time to work on the pset and I ran out of late days",
+                "I'm not feeling well and would like to request more late days",
+                "I just want to ask for an additional 24 hours",
+                "I wish to request additional late hours",
+                "I realize it’s a bit late to be asking this, but I’ve had a bit of a rough week health-wise and I’m concerned about my ability to finish my pset on time even with 2 remaining late days. I’ve got a busy weekend ahead as I am with the rest of the team at conference championships. If there is any way I could get an extra one or two day extension that would be hugely beneficial.",
+                "I'm a bit sick at the moment so haven't been able to go to office hours or pset normally with my friends and I'm getting a bit anxious about my progress on pset 5. I've used up all my late days (I think), but would it be possible for me to take a few more days on this pset?",
+                "Is there any chance I can get a few more days added to my pset3 deadline due to extenuating circumstances?",
+                " I was wondering whether I could receive a weekend extension for this week's PSET. I have completed 10 tests as of now, but I'm currently brushing up on my prior knowledge, which held me back temporarily.",
+                "Hello, I am writing to see if it would be possible for me to get an extension on this pset. My laptop's battery has deteriorated to the point that it will not work unless it is plugged in inside my dorm, so it has been difficult for me to attend many of the OHs that are in person.",
+                "I was wondering if I could get any sort of extension on the due date for PSET 1. My computer display appears to be broken (video below), and I can’t access anything on there.",
+                " I have been working countless hours on this problem set and cannot seem to get past step 5. I am worried I will not be able to finish by the deadline/with my remaining late days at this rate. Can I have more late hours?",
+                "I've been working on this pset for a while, and really thought I could get it done by tonight. I only have 15 late hours left so would it be possible to get extra late days? ",
+                "I think I used up all of my late hours at p.m. today. Unfortunately, I was having a rough time the week of pset 1  and used up most of my hours (94 hours) then. I've been pretty consistent with the psets since then, but I underestimated how long this pset would take. I'd really appreciate another day or two to finish up.",
+                "I just completed all the parts of pset 5 but used all 144 (maybe 145 by now) late hours for the semester. I would like to spend any extra time on style because my code is very messy. I also need to address some memory leaks. An extra day or two would help!",
+                "I have been putting a regular amount of work on the current pset throughout the last two weeks. I am almost done with the normal part even though I still have 1 more issue to fix. And since my 6 days are coming to an end I hope you grant me more late hours.",
+                "I'm reaching out as I've recently run out of late hours working on PSet 5. I'm currently in the middle of step 5 and would like to request more time to complete the assignment.",
+                "I’m writing, as per the Ed post and Eddie’s comment, to request more late days so I can finish up problem set 4.",
+                "I am wondering if I can receive an extension for problem set 5. I've used up all my late hours as of last night, but I am still trying to work on and complete shell. ",
+                "I'm working on the pset debugging but can't finish it on time. Tomorrow is my last late day. Can I have more late days?",
+                "I wanted to reach out to see if it was possible to get more extension days on this current pset? ",
+                "Is there a possibility that I could get more late hours?",
+                "I was wondering if it would be possible to get additional late days for the submission of pset5?",
+                "Would it be possible to submit the pset by the end of today?  I think this would be roughly an additional 48 late hours.  I have been working very diligently over the past week, but still was unable to finish within my allotted late hours.",
+                "I’m requesting extra late hours for the shell problem set. I run out of late hours at roughly am later tonight today, and I don’t think that I will be able to finish the problem set within the given time frame",
+                " I wanted to inquire about getting an extension for Problem 6 Set"
+            ],
+            "responses": [
+                "If I'm not mistaken, you are asking for more late hours?",
+                "Correct me if I'm wrong, you're asking for an extention?",
+                "So you need a time extension?"
+            ],
+            "context_set": "extra hours"
+        },
+        {
+            "tag": "late-yes",
+            "patterns": [
+                "Yes",
+                "That's correct",
+                "Correct",
+                "That's right",
+                "Right",
+                "Yess",
+                "Yeah",
+                "Yep",
+                "Mhm",
+                "Exactly"
+            ],
+            "responses": [
+                "Got it. Could you explain in a sentence or two why you need the extension?",
+                "Okay. Please explain in a sentence or two why you're asking for this extension.",
+                "Please tell me in a sentence or two why you need extra time."
+            ],
+            "context_filter": "extra hours"
+        },
+        {
+            "tag": "no",
+            "patterns": [
+                "No",
+                "Not really",
+                "Wrong",
+                "Incorrect",
+                "No this is not what I meant",
+                "No I don't need extra time",
+                "You misunderstood"
+            ],
+            "responses": [
+                "Sorry if I misundertood you. Could you try again?",
+                "Sorry about that. Try again. Maybe be more precise and straight to the point.",
+                "Apologies. Try again. State your request in a sentence or two. And if you still think I'm not being helpul, contact staff."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "commit",
+            "patterns": [
+                "There is a commit on my pset 1 that I never remember uploading which I am worried has used some of my late days.",
+                "hello, when I pushed the new pset, I realized that the old pset was mistankely committed anew.",
+                "hi, pset1 has a new commit that uses more late hours.",
+                "When trying to test out my code for PSET 4 on the grading server, it accidentally pushed other psets in the same folder. I had scratchwork for an extra credit problem in PSET 3 that got pushed to GitHub unintentionally. Is there a way to revert this in the grading server? I don't want to use the 115 late hours for my submission.",
+                "accidental push",
+                "unintentional pushing",
+                "I need help with a commit",
+                "hi, I have a commit error",
+                "untentionally pushed old pset",
+                "push by mistake",
+                "unentional commit",
+                "new pset commit to old pset",
+                "accidental commit",
+                "I was looking at the grading server today and I noticed that for some reason the active commit listed for my pset 4 is one of the commits for my pset 5 and not my actual final submission. How do I change that?",
+                " I was checking the grading server website, and I realized that my pset4 code is using a commit from a recent accidental merge that I made. As a result, it looks it is saying I'm using 214 late hours.",
+                "The actual commit I meant to submit, which I believe uses no late hours, was the previous one, numbered 5c5e364. When grading, would it be possible to use the code in this commit instead?",
+                "I noticed a problem on my grading server where it seems that when I submitted problem set 4 that I accidentally re-commited all of the folders for my previous problem sets"
+            ],
+            "responses": [
+                "You're saying that you have an error with one of your commits, correct?",
+                "Are you saying that you have a commit error?",
+                "If I'm correct, you have an issue with a pset commit?"
+            ],
+            "context_set": "commit issue"
+        },
+        {
+            "tag": "commit-yes",
+            "patterns": [
+                "Yes",
+                "That's correct",
+                "Correct",
+                "That's right",
+                "Right",
+                "Yess",
+                "Yeah",
+                "Yep",
+                "Mhm",
+                "Exactly"
+            ],
+            "responses": [
+                "Got it. Just to be sure, please type which pset(s) have a commit error. (e.g. pset3 and pset4, all psets, etc.)",
+                "Okay. No worries, just type below which pset(s) you would like us to take a look at.",
+                "Noted. Just to confirm, please tell me below which pset(s) you'd like the staff to fix for you."
+            ],
+            "context_filter": "commit issue"
+        },
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hi, hello",
+                "Hi there",
+                "Hello",
+                "Is anyone there?",
+                "Hello",
+                "Good day",
+                "yo",
+                "heyo",
+                "helllo",
+                "hiiiii",
+                "hiii"
+            ],
+            "responses": [
+                "Hey you. How can I help?",
+                "Hi, thanks for visiting. Explain in one or two sentences what you need from me?",
+                "Hi there, how can I help? One or two sentence should suffice for now.",
+                "Hello! Thanks for coming. How can I help?"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "how am i",
+            "patterns": [
+                "Hi, how are you?",
+                "How are you",
+                "what's up",
+                "How is it hanging?",
+                "How you doin?",
+                "How're you doing?",
+                "How are u?",
+                "How are you doing?",
+                "How is it going?",
+                "Hope you're doing well"
+            ],
+            "responses": [
+                "I'm good, thanks for asking. How can I help?",
+                "Doing well. Thanks. Please, tell me how I can help you?",
+                "Could be better could be worse. How can I help?",
+                "Good. Hope you're doing well. Can I help you with anything?",
+                "I'm alright. How can I help you?"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye",
+                "Byebye",
+                "Thanks. Bye."
+            ],
+            "responses": [
+                "See you later, thanks for visiting",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful",
+                "I appreciate it.",
+                "Appreciated",
+                "Thanks a lot"
+            ],
+            "responses": [
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ]
+        }
+    ],
+    "manual": [
+        {
+            "tag": "commit-pset",
+            "patterns": [
+                "pset1",
+                "pset 1",
+                "pset",
+                "problem set1",
+                "problem set 1",
+                "problem set one",
+                "pset2",
+                "pset 2",
+                "problem set2",
+                "problem set 2",
+                "problem set two"
+            ],
+            "response": [
+                "Noted. I will notify staff.",
+                "Thanks. I will let staff know and we'll fix it for you.",
+                "No worries, we will fix it for you.",
+                "Thanks. We will fix the issue for you",
+                "Don't worry. Staff will fix the error for you"
+            ],
+            "context_filter": "commit issue"
+        },
+        {
+            "tag": "late-reason",
+            "response": []
+        }
+    ]
+}
