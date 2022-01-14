@@ -1,15 +1,15 @@
 import random
 import json
 import torch
-from model import NeuralNet
-from vtf_funcs import bow, tokenize
+from app.model import NeuralNet
+from app.vtf_funcs import bow, tokenize
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-with open("cs61-chatbot-intents.json", "r") as json_data:
+with open("app/cs61-chatbot-intents.json", "r") as json_data:
     intents = json.load(json_data)
 
-FILE = "data.pth"
+FILE = "app/data.pth"
 data = torch.load(FILE)
 
 context = None

@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
-with open("cs61-chatbot-intents.json", "r") as intent_data:
+with open("app/cs61-chatbot-intents.json", "r") as intent_data:
     intents = json.load(intent_data)
 
 
@@ -110,7 +110,7 @@ def main():
     }
 
     # serialize and save to a pickled file
-    FILE = "data.pth"
+    FILE = "app/data.pth"
     torch.save(data, FILE)
 
     print(f"Training complete. File saved to {FILE}")

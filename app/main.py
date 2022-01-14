@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 
-from chat import get_response
+from app.chat import get_response
 
 from flask import Flask, render_template, request, redirect, url_for, session
 
