@@ -62,6 +62,7 @@ def get_response(sentence):
         "Sorry, I didn't quite understand",
         "Sorry, could you try again?",
         "Apologies, I didn't get that. Try again maybe?",
+        "I didn't get that. Please try again.",
     ]
     yes_commit = [
         "Okay, thanks. I will let staff know about it.",
@@ -75,6 +76,14 @@ def get_response(sentence):
         "I suggest that you use up your late hours - this is exactly what they are for. We are happy to help more if those also aren't enough.",
         "Okay. I can grant you 2 more late days. Hope this helps.",
         "Alright. Given your circumstances, you can use up to 6 more late days.",
+    ]
+    repeat = [
+        "Why are you repeating yourself?",
+        "Didn't you just say the same thing?",
+        "You've said that already. Try something else.",
+        "Don't repeat yourself...",
+        "If you keep saying the same thing, I won't be able to help you..",
+        "Please don't just say the same thing.",
     ]
 
     if filter_active:
@@ -94,7 +103,10 @@ def get_response(sentence):
                 if tag == intent["tag"]:
                     # set context for this intent if necessary
                     if "context_set" in intent:
-                        context = intent["context_set"]
+                        if intent["context_set"] == context:
+                            return random.choice(repeat)
+                        else:
+                            context = intent["context_set"]
                     # return random response from intent's set if it's not contextual, and if it's contextual and
                     # matches the user's urrent context
                     if not "context_filter" in intent or (
