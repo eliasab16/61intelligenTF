@@ -79,7 +79,7 @@
                 "Sorry about that. Try again. Maybe be more precise and straight to the point.",
                 "Apologies. Try again. State your request in a sentence or two. And if you still think I'm not being helpul, contact staff."
             ],
-            "context_set": ""
+            "context_set": "no"
         },
         {
             "tag": "commit",
@@ -152,7 +152,7 @@
                 "Hi there, how can I help? One or two sentence should suffice for now.",
                 "Hello! Thanks for coming. How can I help?"
             ],
-            "context_set": ""
+            "context_set": "greeting"
         },
         {
             "tag": "how am i",
@@ -175,7 +175,7 @@
                 "Good. Hope you're doing well. Can I help you with anything?",
                 "I'm alright. How can I help you?"
             ],
-            "context_set": ""
+            "context_set": "how"
         },
         {
             "tag": "goodbye",
@@ -191,7 +191,7 @@
                 "Have a nice day",
                 "Bye! Come back again soon."
             ],
-            "context_set": ""
+            "context_set": "bye"
         },
         {
             "tag": "thanks",
@@ -208,7 +208,7 @@
                 "Any time!",
                 "My pleasure"
             ],
-            "context_set": ""
+            "context_set": "thanks"
         }
     ],
     "manual": [
