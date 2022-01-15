@@ -31,6 +31,8 @@ model.eval()
 
 bot_name = "intelligenTF"
 
+ERROR_THRESHOLD = 0.25
+
 
 def classify(sentence):
     sentence = tokenize(sentence)
@@ -39,7 +41,11 @@ def classify(sentence):
     user_input = torch.from_numpy(user_input).to(device)
 
     output = model(user_input)
-    results = [[i, r] for i, r in enumerate(output[0]) if r > 0.25]
+    results = [
+        [i, torch.sigmoid(torch.Tensor([[r]])).item()]
+        for i, r in enumerate(output[0])
+        if torch.sigmoid(torch.Tensor([[r]])).item() > ERROR_THRESHOLD
+    ]
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
     for r in results:
@@ -52,24 +58,32 @@ def get_response(sentence):
     global context
     global filter_active
 
-    if filter_active:
-        important_storage[context] = sentence
-        filter_active = False
-        return random.choice(
-            [
-                "Okay, thanks. I will let staff know about it.",
-                "Noted. Staff will take care of it. Anything else?",
-                "Got it. I will notify staff. Thanks.",
-                "Okay, a staff member will take a look and fix it for you.",
-                "OK. If there's an error, we will fix it for you.",
-            ]
-        )
-
     not_understand = [
         "Sorry, I didn't quite understand",
         "Sorry, could you try again?",
         "Apologies, I didn't get that. Try again maybe?",
     ]
+    yes_commit = [
+        "Okay, thanks. I will let staff know about it.",
+        "Noted. Staff will take care of it. Anything else?",
+        "Got it. I will notify staff. Thanks.",
+        "Okay, a staff member will take a look and fix it for you.",
+        "OK. If there's an error, we will fix it for you.",
+    ]
+    yes_late = [
+        "It seems like you still have late days left. Please use those first, and then come back here if you run into more problems.",
+        "I suggest that you use up your late hours - this is exactly what they are for. We are happy to help more if those also aren't enough.",
+        "Okay. I can grant you 2 more late days. Hope this helps.",
+        "Alright. Given your circumstances, you can use up to 6 more late days.",
+    ]
+
+    if filter_active:
+        important_storage[context] = sentence
+        filter_active = False
+        if context == "extra hours":
+            return random.choice(yes_late)
+        elif context == "commit issue":
+            return random.choice(yes_commit)
 
     results = classify(sentence)
 

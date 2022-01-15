@@ -1,5 +1,5 @@
 import json
-from vtf_funcs import tokenize, stem, bow
+from app.vtf_funcs import tokenize, stem, bow
 import numpy as np
 from model import NeuralNet
 
@@ -24,7 +24,9 @@ def main():
         for pattern in intent["patterns"]:
             # tokenize and combine with words_set
             tokenized_words = tokenize(pattern)
-            words_set.extend(stem(word) for word in tokenized_words)
+            words_set.extend(
+                stem(word) for word in tokenized_words if word not in ignore_words
+            )
             docs.append((tokenized_words, tag))
 
     # remove duplicates and sort
