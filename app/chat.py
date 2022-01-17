@@ -104,6 +104,7 @@ def get_response(sentence):
                     # set context for this intent if necessary
                     if "context_set" in intent:
                         if intent["context_set"] == context:
+                            context = None
                             return random.choice(repeat)
                         else:
                             context = intent["context_set"]
@@ -112,15 +113,18 @@ def get_response(sentence):
                     if not "context_filter" in intent or (
                         context != None
                         and "context_filter" in intent
-                        and intent["context_filter"] == context
+                        and context in intent["context_filter"]
                     ):
                         if "context_filter" in intent:
                             filter_active = True
-                        # a random response from the intent
-                        return random.choice(intent["responses"])
+                            return random.choice(intent["responses"][context])
+                        else:
+                            # a random response from the intent
+                            return random.choice(intent["responses"])
 
             results.pop(0)
 
+    context = None
     return random.choice(not_understand)
 
 

@@ -5,6 +5,9 @@
             "patterns": [
                 "I've been really struggling with this pset and was planning to take a late day to hopefully work it out, but I just checked on the grading server and that would take me a couple of hours over the allotted number of late hours. I want to request another extension to just try and grind it out over tomorrow if possible.",
                 "I need an extra late day.",
+                "I need an extension",
+                "I need an extention for pset4",
+                "I want to ask for an extention to work on pset",
                 "I would like to request more late hours",
                 "Can I have an extenion? I am feeling sick and cannot finish the pset on time",
                 "I would like to request an extention. One or two late days would do it.",
@@ -41,27 +44,6 @@
                 "So you need a time extension?"
             ],
             "context_set": "extra hours"
-        },
-        {
-            "tag": "late-yes",
-            "patterns": [
-                "Yes",
-                "That's correct",
-                "Correct",
-                "That's right",
-                "Right",
-                "Yess",
-                "Yeah",
-                "Yep",
-                "Mhm",
-                "Exactly"
-            ],
-            "responses": [
-                "Got it. Could you explain in a sentence or two why you need the extension?",
-                "Okay. Please explain in a sentence or two why you're asking for this extension.",
-                "Please tell me in a sentence or two why you need extra time."
-            ],
-            "context_filter": "extra hours"
         },
         {
             "tag": "no",
@@ -110,7 +92,7 @@
             "context_set": "commit issue"
         },
         {
-            "tag": "commit-yes",
+            "tag": "yes",
             "patterns": [
                 "Yes",
                 "That's correct",
@@ -123,12 +105,22 @@
                 "Mhm",
                 "Exactly"
             ],
-            "responses": [
-                "Got it. Just to be sure, please type which pset(s) have a commit error. (e.g. pset3 and pset4, all psets, etc.)",
-                "Okay. No worries, just type below which pset(s) you would like us to take a look at.",
-                "Noted. Just to confirm, please tell me below which pset(s) you'd like the staff to fix for you."
-            ],
-            "context_filter": "commit issue"
+            "responses": {
+                "commit issue": [
+                    "Got it. Just to be sure, please type which pset(s) have a commit error. (e.g. pset3 and pset4, all psets, etc.)",
+                    "Okay. No worries, just type below which pset(s) you would like us to take a look at.",
+                    "Noted. Just to confirm, please tell me below which pset(s) you'd like the staff to fix for you."
+                ],
+                "extra hours": [
+                    "Got it. Could you explain in a sentence or two why you need the extension?",
+                    "Okay. Please explain in a sentence or two why you're asking for this extension.",
+                    "Please tell me in a sentence or two why you need extra time."
+                ]
+            },
+            "context_filter": [
+                "commit issue",
+                "extra hours"
+            ]
         },
         {
             "tag": "greeting",
@@ -201,7 +193,8 @@
                 "That's helpful",
                 "I appreciate it.",
                 "Appreciated",
-                "Thanks a lot"
+                "Thanks a lot",
+                "yes, thanks"
             ],
             "responses": [
                 "Happy to help!",
